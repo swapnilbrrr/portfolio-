@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swapnil Katuwal | Cybersecurity Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="#hero" class="nav-logo">SK</a>
+      <ul class="nav-menu">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#certifications" class="nav-link">Certs</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" aria-label="Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Cyber Theme Background -->
+  <section id="hero" class="hero">
+    <canvas id="hero-bg"></canvas>
+    <div class="hero-content">
+      <h1 data-text="Swapnil Katuwal" class="glitch">Swapnil Katuwal</h1>
+      <p>Cybersecurity Intern / SOC Analyst-in‑Training<span class="cursor"></span></p>
+      <div class="hero-cta">
+        <a href="#projects" class="cta-button">View Projects</a>
+        <a href="/resume/SwapnilKatuwal-CV.pdf" target="_blank" class="cta-button secondary">Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about fade-in">
+    <h2>About Me</h2>
+    <p>A passionate cybersecurity enthusiast with a knack for building practical tools and solutions. I specialize in Python for network security, developing SOC lab environments, and creating efficient port scanners. My focus is on mastering defensive security, enhancing visibility analysis, and turning theoretical knowledge into hands-on expertise. I am actively seeking opportunities to contribute to a security team and grow as a SOC analyst.</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects fade-in">
+    <h2>Projects</h2>
+    <div class="project-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="python">Python</button>
+      <button class="filter-btn" data-filter="soc">SOC</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+    </div>
+    <div class="project-list">
+      <!-- Project 1 -->
+      <div class="project-item" data-category="python">
+        <div class="project-image-placeholder"></div>
+        <h3>Port Scanner / Detector</h3>
+        <p>A modular Python port scanning tool with banner grabbing, multi-threaded scanning, and timestamped logging for security analysis.</p>
+        <div class="project-tech">
+          <span>Python</span>
+          <span>Networking</span>
+          <span>Concurrency</span>
+        </div>
+        <a href="https://github.com/swapnilbrrr/portscan-detector" target="_blank">View on GitHub</a>
+      </div>
+      <!-- Project 2 -->
+      <div class="project-item" data-category="soc">
+        <div class="project-image-placeholder"></div>
+        <h3>SOC Simulation Lab</h3>
+        <p>A virtualized lab environment simulating a Security Operations Center, used for practicing incident response and threat hunting.</p>
+        <div class="project-tech">
+          <span>VirtualBox</span>
+          <span>SIEM</span>
+          <span>Wireshark</span>
+        </div>
+        <a href="#" target="_blank">View on GitHub</a>
+      </div>
+      <!-- Project 3 -->
+      <div class="project-item" data-category="python">
+        <div class="project-image-placeholder"></div>
+        <h3>Packet Capture Analyzer</h3>
+        <p>A Python script that analyzes .pcap files to extract key network traffic insights and identify suspicious patterns.</p>
+        <div class="project-tech">
+          <span>Python</span>
+          <span>Scapy</span>
+          <span>Pandas</span>
+        </div>
+        <a href="https://github.com/swapnilbrrr/Packet-Capture-Analyzer" target="_blank">View on GitHub</a>
+      </div>
+      <!-- Project 4 -->
+      <div class="project-item" data-category="web">
+        <div class="project-image-placeholder"></div>
+        <h3>CTF Write-up Platform</h3>
+        <p>A personal blog site built to document and share solutions for Capture The Flag (CTF) challenges and other security topics.</p>
+        <div class="project-tech">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+        <a href="#" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills fade-in">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3>Security & Analysis</h3>
+        <div class="skill">
+          <p>Network Security</p>
+          <div class="skill-bar"><div class="skill-level" data-level="85"></div></div>
+        </div>
+        <div class="skill">
+          <p>SOC & SIEM</p>
+          <div class="skill-bar"><div class="skill-level" data-level="75"></div></div>
+        </div>
+        <div class="skill">
+          <p>Digital Forensics</p>
+          <div class="skill-bar"><div class="skill-level" data-level="65"></div></div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Programming & Tools</h3>
+        <div class="skill">
+          <p>Python</p>
+          <div class="skill-bar"><div class="skill-level" data-level="90"></div></div>
+        </div>
+        <div class="skill">
+          <p>Bash</p>
+          <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
+        </div>
+        <div class="skill">
+          <p>Wireshark</p>
+          <div class="skill-bar"><div class="skill-level" data-level="80"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="certifications fade-in">
+    <h2>Certifications</h2>
+    <ul>
+      <li><a href="#">Introduction to Cybersecurity</a></li>
+      <li><a href="#">Cisco Certified CyberOps Associate (Planned)</a></li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact fade-in">
+    <h2>Contact Me</h2>
+    <p>I'm currently seeking new opportunities. Feel free to reach out!</p>
+    <form id="contact-form">
+      <div class="form-group">
+        <input type="text" id="name" name="name" required>
+        <label for="name">Name</label>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="email" required>
+        <label for="email">Email</label>
+      </div>
+      <div class="form-group">
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <label for="message">Message</label>
+      </div>
+      <button type="submit" class="cta-button">Send Message</button>
+    </form>
+    <div class="social-links">
+      <a href="https://github.com/swapnilbrrr" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="social-icon"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/swapnil-katuwal-bb7529309" target="_blank" title="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="social-icon"><path d="M15.5 0h-15C.22 0 0 .22 0 .5v15c0 .28.22.5.5.5h15c.28 0 .5-.22.5-.5v-15C16 .22 15.78 0 15.5 0zM4.5 14h-3V6h3v8zM3 4.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm11 9.5h-3V9.75c0-1.12-.4-1.88-1.4-1.88-1 0-1.6.67-1.6 1.88V14h-3V6h2.8v1.4h.04c.42-.8 1.44-1.64 2.96-1.64 3.16 0 3.74 2.08 3.74 4.78V14z"></path></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Swapnil Katuwal. All Rights Reserved.</p>
+  </footer>
+
+  <div id="toast-container"></div>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
