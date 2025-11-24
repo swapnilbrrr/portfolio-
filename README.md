@@ -9,17 +9,9 @@
 
 A modern, responsive, and interactive portfolio for cybersecurity professionals, built from scratch with vanilla web technologies.
 
-**[View Live Demo](https://swapnilbrrr.github.io/portfolio/)** 👈
+**[View Live Demo](https://swapnilkatuwal.vercel.app/)** 👈
 
 </div>
-
----
-
-<p align="center">
-  <img src="./images/screenshot.png" alt="Portfolio Screenshot" width="800px">
-  <br>
-  <em>To generate this screenshot, create an <code>/images</code> folder and add a <code>screenshot.png</code> file.</em>
-</p>
 
 ---
 
@@ -86,19 +78,6 @@ You only need a modern web browser.
     cd portfolio
     ```
 3.  Open `index.html` in your browser. That's it!
-
----
-
-## 🚢 Deployment
-
-This site is ready to be deployed on any static hosting service. Here’s how to deploy it for free using **GitHub Pages**:
-
-1.  **Push to GitHub:** Make sure your code is pushed to your GitHub repository.
-2.  **Enable GitHub Pages:**
-    -   In your repository, go to **Settings** > **Pages**.
-    -   Under "Build and deployment," select **Deploy from a branch** as the source.
-    -   Choose the `main` (or `master`) branch and the `/ (root)` folder, then click **Save**.
-3.  **Update Live URL:** Your site will be live in a few minutes at `https://your-username.github.io/your-repo-name/`. Copy this URL and update the "View Live Demo" link at the top of this README!
 
 ---
 
