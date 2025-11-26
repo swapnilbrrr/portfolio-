@@ -48,6 +48,7 @@ This project is a personal portfolio website designed to showcase my skills, pro
     -   Smooth-scrolling single-page application (SPA) experience.
     -   Navbar hides on scroll-down and reappears on scroll-up for an unobstructed view.
     -   Active link highlighting tracks your position on the page.
+    -   A convenient "Scroll to Top" button appears for easy navigation.
 -   **High-Performance Animations:**
     -   Scroll-triggered fade-in effects using the efficient `IntersectionObserver` API.
     -   Animated skill bars that activate upon entering the viewport.
