@@ -21,15 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
 
     // Hide/Show Navbar on scroll
-    let prevScroll = window.pageYOffset;
-    window.onscroll = function() {
-        let currentScroll = window.pageYOffset;
-        if (prevScroll > currentScroll) {
-            navbar.style.top = "0";
+    let lastScrollY = window.scrollY;
+    window.addEventListener("scroll", () => {
+        if (lastScrollY < window.scrollY && window.scrollY > 70) {
+            navbar.classList.add("hidden");
         } else {
-            navbar.style.top = "-80px";
+            navbar.classList.remove("hidden");
         }
-        prevScroll = currentScroll;
+        lastScrollY = window.scrollY;
 
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -37,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.remove('scrolled');
         }
         updateActiveNav();
-    };
+    });
 
     // Hero background animation
     const canvas = document.getElementById("hero-bg");
@@ -177,12 +176,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const filter = btn.getAttribute('data-filter');
 
             projectItems.forEach(item => {
-                item.classList.add('hide');
-                setTimeout(() => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.style.display = 'flex';
+                    setTimeout(() => {
                         item.classList.remove('hide');
-                    }
-                }, 10);
+                    }, 10);
+                } else {
+                    item.classList.add('hide');
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 500); // Match animation duration
+                }
             });
         });
     });

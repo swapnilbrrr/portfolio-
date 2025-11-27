@@ -36,16 +36,18 @@ This project is a personal portfolio website designed to showcase my skills, pro
 
 -   **Cyber-Inspired UI/UX:** Dark theme with a matrix-style particle animation and a glitch text effect for a modern, technical feel.
 -   **Fully Responsive Design:** Adapts seamlessly from mobile devices to high-resolution desktop displays.
+-   **Comprehensive Skill Showcase:** The skills section has been expanded to include a "Cloud & Virtualization" category and features more realistic proficiency levels for an intern.
+-   **Dynamic Project Showcase:** An expanded project section now includes a "Password Strength Checker" to highlight practical JavaScript skills. Projects are filterable by category, including the new JavaScript tag.
 -   **Intelligent Navigation:**
-    -   Smooth-scrolling single-page application (SPA) experience.
-    -   Navbar hides on scroll-down and reappears on scroll-up for an unobstructed view.
+    -   The navbar now smoothly fades out when scrolling down and reappears when scrolling up, providing an immersive, distraction-free experience.
     -   Active link highlighting tracks your position on the page.
     -   A convenient "Scroll to Top" button appears for easy navigation.
 -   **High-Performance Animations:**
     -   Scroll-triggered fade-in effects using the efficient `IntersectionObserver` API.
     -   Animated skill bars that activate upon entering the viewport.
--   **Dynamic Project Filtering:** Interactive buttons allow visitors to filter projects by category (Python, SOC, etc.).
+-   **Dynamic Project Filtering:** Interactive buttons allow visitors to filter projects by category (Python, SOC, etc.) with smooth animations.
 -   **Backend-less Contact Form:** A fully functional contact form using **EmailJS** to deliver messages directly to your inbox, complete with toast notifications for user feedback.
+-   **Micro-interactions & SEO:** Subtle hover effects and animations on project cards, tags, and links to enhance user experience. Basic SEO meta tags have been added to improve search engine visibility.
 
 ---
 

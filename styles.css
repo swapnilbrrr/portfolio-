@@ -33,8 +33,15 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000;
-  transition: top 0.3s, box-shadow 0.3s;
+  transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.3s;
   border-bottom: 1px solid var(--border-color);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar.hidden {
+    opacity: 0;
+    transform: translateY(-100%);
 }
 
 .navbar.scrolled {
@@ -48,6 +55,7 @@ body {
   height: 70px;
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .nav-logo {
@@ -296,12 +304,36 @@ section h2 {
   overflow: hidden;
   opacity: 1;
   transform: scale(1);
+  animation: project-in 0.5s ease-out forwards;
+}
+
+@keyframes project-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .project-item.hide {
   transform: scale(0.9);
   opacity: 0;
   display: none;
+  animation: project-out 0.5s ease-out forwards;
+}
+
+@keyframes project-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 }
 
 .project-image-placeholder {
@@ -364,12 +396,22 @@ section h2 {
   padding-bottom: 1.5rem;
 }
 
+.project-item a.disabled-link {
+  color: var(--secondary-color);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.project-item a.disabled-link:hover {
+  color: var(--secondary-color);
+}
+
 /* Skills */
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3rem;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -668,6 +710,12 @@ section h2 {
 }
 .footer a:hover {
   text-decoration: underline;
+}
+#about p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1rem;
 }
 #about p {
   max-width: 800px;
