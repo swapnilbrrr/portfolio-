@@ -1,11 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  const EMAILJS_PUBLIC_KEY = 'tSnZoTCJJafY5EOj5';
+  const EMAILJS_SERVICE_ID = 'service_z9yhmjg';
+  const EMAILJS_TEMPLATE_ID = 'template_57voene';
+  const CONTACT_RATE_LIMIT_KEY = 'contactFormLastSubmitAt';
+  const CONTACT_RATE_LIMIT_MS = 60 * 1000;
+  const emailjsClient = window.emailjs;
+  let emailjsReady = false;
+
   // ============================
   // EmailJS Init
   // ============================
-  (function() {
-    emailjs.init("tSnZoTCJJafY5EOj5");
-  })();
+  if (emailjsClient && typeof emailjsClient.init === 'function') {
+    try {
+      emailjsClient.init(EMAILJS_PUBLIC_KEY);
+      emailjsReady = true;
+    } catch (err) {
+      console.warn('Email service initialization failed.', err);
+    }
+  } else {
+    console.warn('Email service is unavailable. Contact form sending is disabled.');
+  }
 
   // ============================
   // Cursor Glow (desktop only)
@@ -346,7 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ============================
-  // Tilt Effect on Project Cards
+  // Project Card Pointer Glow
   // ============================
   const tiltCards = document.querySelectorAll('.tilt-card');
 
@@ -358,21 +373,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -5;
-        const rotateY = ((x - centerX) / centerX) * 5;
+        const mx = (x / rect.width) * 100;
+        const my = (y / rect.height) * 100;
 
-        card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+        card.style.setProperty('--mx', `${mx}%`);
+        card.style.setProperty('--my', `${my}%`);
 
         // Move glow to mouse position
         if (glowEl) {
-          glowEl.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(59, 130, 246, 0.12) 0%, transparent 60%)`;
+          glowEl.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(59, 130, 246, 0.12) 0%, transparent 62%)`;
         }
       });
 
       card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
+        card.style.setProperty('--mx', '50%');
+        card.style.setProperty('--my', '50%');
         if (glowEl) {
           glowEl.style.background = '';
         }
@@ -469,39 +484,74 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================
   // Project Filtering
   // ============================
+  const projectGridPanel = document.getElementById('project-grid-panel');
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
-      });
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
-      const filter = btn.dataset.filter;
-
-      projectCards.forEach((card, i) => {
-        const category = card.dataset.category;
-        if (filter === 'all' || category === filter) {
-          card.style.display = 'flex';
-          card.style.transitionDelay = (i * 60) + 'ms';
+  function applyProjectFilter(filter) {
+    projectCards.forEach((card, i) => {
+      const category = card.dataset.category;
+      if (filter === 'all' || category === filter) {
+        card.style.display = 'flex';
+        card.setAttribute('aria-hidden', 'false');
+        card.style.transitionDelay = (i * 60) + 'ms';
+        requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              card.classList.remove('hide');
-            });
+            card.classList.remove('hide');
           });
-        } else {
-          card.style.transitionDelay = '0ms';
-          card.classList.add('hide');
-          setTimeout(() => {
-            if (card.classList.contains('hide')) {
-              card.style.display = 'none';
-            }
-          }, 400);
-        }
-      });
+        });
+      } else {
+        card.style.transitionDelay = '0ms';
+        card.classList.add('hide');
+        card.setAttribute('aria-hidden', 'true');
+        setTimeout(() => {
+          if (card.classList.contains('hide')) {
+            card.style.display = 'none';
+          }
+        }, 400);
+      }
+    });
+  }
+
+  function activateFilterTab(targetBtn, moveFocus = false) {
+    filterBtns.forEach(btn => {
+      const isActive = btn === targetBtn;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      btn.tabIndex = isActive ? 0 : -1;
+    });
+
+    if (projectGridPanel) {
+      projectGridPanel.setAttribute('aria-labelledby', targetBtn.id);
+    }
+
+    applyProjectFilter(targetBtn.dataset.filter);
+
+    if (moveFocus) {
+      targetBtn.focus();
+    }
+  }
+
+  filterBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => activateFilterTab(btn));
+
+    btn.addEventListener('keydown', (e) => {
+      let targetIndex = index;
+
+      if (e.key === 'ArrowRight') targetIndex = (index + 1) % filterBtns.length;
+      if (e.key === 'ArrowLeft') targetIndex = (index - 1 + filterBtns.length) % filterBtns.length;
+      if (e.key === 'Home') targetIndex = 0;
+      if (e.key === 'End') targetIndex = filterBtns.length - 1;
+
+      if (targetIndex !== index) {
+        e.preventDefault();
+        activateFilterTab(filterBtns[targetIndex], true);
+      }
+
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        activateFilterTab(btn);
+      }
     });
   });
 
@@ -534,32 +584,61 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================
   const contactForm = document.getElementById('contact-form');
 
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-    const submitBtn = this.querySelector('button[type="submit"]');
-    const originalContent = submitBtn.innerHTML;
-    submitBtn.innerHTML = `
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      Sending...
-    `;
-    submitBtn.disabled = true;
-    submitBtn.style.opacity = '0.7';
-
-    emailjs.sendForm('service_z9yhmjg', 'template_57voene', this)
-      .then(() => {
+      const honeypot = this.querySelector('#website');
+      if (honeypot && honeypot.value.trim() !== '') {
         showToast('Message sent successfully!', 'success');
-        contactForm.reset();
-      })
-      .catch(() => {
-        showToast('Failed to send message. Please try again.', 'error');
-      })
-      .finally(() => {
-        submitBtn.innerHTML = originalContent;
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = '';
-      });
-  });
+        this.reset();
+        return;
+      }
+
+      const now = Date.now();
+      const lastSubmitAt = Number(localStorage.getItem(CONTACT_RATE_LIMIT_KEY) || 0);
+      if (now - lastSubmitAt < CONTACT_RATE_LIMIT_MS) {
+        showToast('Please wait a moment before sending another message.', 'error');
+        return;
+      }
+
+      const messageField = this.querySelector('#message');
+      if (messageField && messageField.value.trim().length < 20) {
+        showToast('Please add a little more detail to your message.', 'error');
+        messageField.focus();
+        return;
+      }
+
+      if (!emailjsReady || !emailjsClient || typeof emailjsClient.sendForm !== 'function') {
+        showToast('Contact service is temporarily unavailable. Please try later.', 'error');
+        return;
+      }
+
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalContent = submitBtn.innerHTML;
+      submitBtn.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Sending...
+      `;
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+
+      emailjsClient.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+        .then(() => {
+          localStorage.setItem(CONTACT_RATE_LIMIT_KEY, String(now));
+          showToast('Message sent successfully!', 'success');
+          contactForm.reset();
+        })
+        .catch(() => {
+          showToast('Failed to send message. Please try again.', 'error');
+        })
+        .finally(() => {
+          submitBtn.innerHTML = originalContent;
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '';
+        });
+    });
+  }
 
   function showToast(message, type) {
     const container = document.getElementById('toast-container');
@@ -575,11 +654,6 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => toast.remove(), 400);
     }, 4000);
   }
-
-  // Add spin animation for loading
-  const spinStyle = document.createElement('style');
-  spinStyle.textContent = `.spin { animation: spin360 1s linear infinite; } @keyframes spin360 { to { transform: rotate(360deg); } }`;
-  document.head.appendChild(spinStyle);
 
   // ============================
   // Scroll to Top

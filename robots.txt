@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://swapnilkatuwal.vercel.app/sitemap.xml
+Host: swapnilkatuwal.vercel.app

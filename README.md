@@ -1,89 +1,127 @@
 <div align="center">
 
-# Cybersecurity Portfolio Website
+# Swapnil Katuwal | SOC Analyst Portfolio
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
-[![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+<p>
+  <a href="https://github.com/swapnilbrrr/portfolio/stargazers"><img src="https://img.shields.io/github/stars/swapnilbrrr/portfolio?style=for-the-badge&color=3b82f6" alt="Stars" /></a>
+  <a href="https://github.com/swapnilbrrr/portfolio/network/members"><img src="https://img.shields.io/github/forks/swapnilbrrr/portfolio?style=for-the-badge&color=22d3ee" alt="Forks" /></a>
+  <a href="https://github.com/swapnilbrrr/portfolio/issues"><img src="https://img.shields.io/github/issues/swapnilbrrr/portfolio?style=for-the-badge&color=f59e0b" alt="Issues" /></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/swapnilbrrr/portfolio?style=for-the-badge&color=10b981" alt="License" /></a>
+</p>
 
-A modern, responsive, and interactive portfolio for cybersecurity professionals, built from scratch with vanilla web technologies.
+<p>
+  <img src="https://img.shields.io/badge/Role-SOC%20Analyst-0a0e17?style=for-the-badge&labelColor=111827&color=3b82f6" alt="Role" />
+  <img src="https://img.shields.io/badge/Focus-Blue%20Team%20Operations-0a0e17?style=for-the-badge&labelColor=111827&color=0891b2" alt="Focus" />
+  <img src="https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JavaScript-0a0e17?style=for-the-badge&labelColor=111827&color=6366f1" alt="Stack" />
+  <img src="https://img.shields.io/badge/Status-Actively%20Maintained-0a0e17?style=for-the-badge&labelColor=111827&color=16a34a" alt="Status" />
+</p>
 
-**[View Live Demo](https://swapnilkatuwal.vercel.app/)** 👈
+Cyber-themed portfolio website built from scratch to showcase SOC capability, cybersecurity projects, certifications, and professional experience.
+
+### Live Website
+[swapnilkatuwal.vercel.app](https://swapnilkatuwal.vercel.app/)
 
 </div>
 
 ---
 
-## 📋 Table of Contents
-
-- [About The Project](#-about-the-project)
-- [✨ Key Features](#-key-features)
-- [🛠️ Built With](#️-built-with)
-- [🚀 Getting Started](#-getting-started)
-- [🚢 Deployment](#-deployment)
-- [📜 License](#-license)
-
----
-
-## 📖 About The Project
-
-This project is a personal portfolio website designed to showcase my skills, projects, and experience within the cybersecurity domain. It was built entirely from scratch to demonstrate a strong understanding of core web development principles without relying on frameworks. The goal was to create a visually engaging, high-performance, and fully responsive site that effectively communicates my capabilities to potential employers.
+## Table of Contents
+- [Overview](#overview)
+- [Why This Portfolio](#why-this-portfolio)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [SEO and Performance](#seo-and-performance)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Customization](#customization)
+- [Roadmap](#roadmap)
+- [License](#license)
 
 ---
 
-## ✨ Key Features
+## Overview
+This project is a modern one-page cybersecurity portfolio focused on clarity, technical branding, and recruiter-friendly storytelling.
 
--   **Cyber-Inspired UI/UX:** Dark theme with a matrix-style particle animation and a glitch text effect for a modern, technical feel.
--   **Fully Responsive Design:** Adapts seamlessly from mobile devices to high-resolution desktop displays.
--   **Comprehensive Skill Showcase:** The skills section has been expanded to include a "Cloud & Virtualization" category and features more realistic proficiency levels for an intern.
--   **Dynamic Project Showcase:** An expanded project section now includes a "Password Strength Checker" to highlight practical JavaScript skills. Projects are filterable by category, including the new JavaScript tag.
--   **Intelligent Navigation:**
-    -   The navbar now smoothly fades out when scrolling down and reappears when scrolling up, providing an immersive, distraction-free experience.
-    -   Active link highlighting tracks your position on the page.
-    -   A convenient "Scroll to Top" button appears for easy navigation.
--   **High-Performance Animations:**
-    -   Scroll-triggered fade-in effects using the efficient `IntersectionObserver` API.
-    -   Animated skill bars that activate upon entering the viewport.
--   **Dynamic Project Filtering:** Interactive buttons allow visitors to filter projects by category (Python, SOC, etc.) with smooth animations.
--   **Backend-less Contact Form:** A fully functional contact form using **EmailJS** to deliver messages directly to your inbox, complete with toast notifications for user feedback.
--   **Micro-interactions & SEO:** Subtle hover effects and animations on project cards, tags, and links to enhance user experience. Basic SEO meta tags have been added to improve search engine visibility.
+It combines visual depth (network canvas, terminal styling, glass UI) with practical content sections (experience, projects, skills, certifications, contact) and production-grade metadata.
 
----
+## Why This Portfolio
+- Built with vanilla web technologies to demonstrate strong frontend fundamentals.
+- Designed to match SOC and blue-team identity.
+- Structured for fast scanning by recruiters and hiring managers.
+- Includes both technical project work and real professional experience.
 
-## 🛠️ Built With
+## Features
 
-This project is a testament to the power of core web technologies.
+### Experience-Driven Content
+- Dedicated Experience section including current role at Cryptogen Nepal.
+- Project cards linked to real cybersecurity work and GitHub repositories.
+- Skills grouped by domain (Security, Tools, Infrastructure).
+- Certifications section with current and in-progress credentials.
 
--   **HTML5:** For semantic structure and content.
--   **CSS3:** For advanced styling, custom properties (variables), responsive layouts (Flexbox & Grid), and keyframe animations.
--   **Vanilla JavaScript (ES6+):** For all interactivity, DOM manipulation, the `<canvas>` animation, and API integrations.
--   **EmailJS:** For client-side handling of the contact form submissions.
+### Visual and Interaction System
+- Interactive hero canvas with animated network nodes.
+- Terminal-inspired hero components and command-style section language.
+- Filterable projects with smooth transitions.
+- Scroll-triggered reveal animations and animated skill bars.
 
----
+### UX and Accessibility
+- Responsive layout from mobile to desktop.
+- Active navigation highlighting and hide-on-scroll navbar.
+- Keyboard-friendly project tab filtering.
+- Contact form feedback states (success/error toasts).
 
-## 🚀 Getting Started
+## Tech Stack
+- HTML5
+- CSS3
+- Vanilla JavaScript (ES6+)
+- EmailJS (contact form delivery)
 
-To get a local copy up and running, follow these simple steps.
+## SEO and Performance
+Implemented SEO baseline includes:
+- Canonical URL, Open Graph, Twitter card tags.
+- Structured data (`Person`, `WebSite`) with role and organization.
+- `robots.txt` and `sitemap.xml` for crawl and indexing.
+- Lightweight architecture with no framework overhead.
 
-### Prerequisites
+## Project Structure
+```text
+portfolio/
+|- index.html
+|- styles.css
+|- script.js
+|- robots.txt
+|- sitemap.xml
+|- images/
+|- resume/
+`- README.md
+```
 
-You only need a modern web browser.
+## Getting Started
+1. Clone the repository.
+```bash
+git clone https://github.com/swapnilbrrr/portfolio.git
+```
 
-### Installation
+2. Open the project directory.
+```bash
+cd portfolio
+```
 
-1.  Clone the repository:
-    ```sh
-    git clone https://github.com/swapnilbrrr/portfolio.git
-    ```
-2.  Navigate into the project directory:
-    ```sh
-    cd portfolio
-    ```
-3.  Open `index.html` in your browser. That's it!
+3. Run locally.
+- Open `index.html` directly, or
+- Use VS Code Live Server for faster iteration.
 
----
+## Customization
+- Update profile content in `index.html`.
+- Tune theme variables and layout in `styles.css`.
+- Adjust interactions and animation logic in `script.js`.
+- Replace CV in `resume/` and keep path aligned with hero button.
 
-## 📜 License
+## Roadmap
+- Add dedicated case-study pages for major projects.
+- Add Lighthouse report badge and performance snapshots.
+- Add analytics for traffic and engagement measurement.
+- Expand technical writeups/blog section for long-tail SEO growth.
 
-Distributed under the MIT License. See `LICENSE` for more information.
+## License
+Distributed under the MIT License.
