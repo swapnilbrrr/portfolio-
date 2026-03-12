@@ -1,257 +1,490 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Swapnil Katuwal, a cybersecurity intern and aspiring SOC Analyst specializing in Python, network security, and threat analysis.">
-  <meta name="keywords" content="Swapnil Katuwal, Cybersecurity, SOC Analyst, Python, Network Security, Portfolio">
+
+  <!-- Primary SEO -->
+  <title>Swapnil Katuwal | Junior SOC Analyst & Cybersecurity Professional</title>
+  <meta name="description" content="Swapnil Katuwal is a Junior SOC Analyst specializing in threat detection, SIEM (Wazuh), incident response, network security, and Python-based security tooling. View projects, certifications, and get in touch.">
+  <meta name="keywords" content="Swapnil Katuwal, SOC Analyst, Cybersecurity, Blue Team, SIEM, Wazuh, Incident Response, Threat Intelligence, Network Security, Python Security Tools, Portfolio, Cybersecurity Portfolio">
   <meta name="author" content="Swapnil Katuwal">
-  
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://swapnilkatuwal.vercel.app/">
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Swapnil Katuwal | Cybersecurity Portfolio">
-  <meta property="og:description" content="Exploring the projects and skills of a passionate cybersecurity professional.">
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="Swapnil Katuwal | Cybersecurity Portfolio">
-  <meta property="twitter:description" content="Exploring the projects and skills of a passionate cybersecurity professional.">
+  <meta property="og:url" content="https://swapnilkatuwal.vercel.app/">
+  <meta property="og:title" content="Swapnil Katuwal | Junior SOC Analyst & Cybersecurity Professional">
+  <meta property="og:description" content="Junior SOC Analyst specializing in threat detection, SIEM operations, incident response, and building Python security tools. Explore my projects and certifications.">
+  <meta property="og:site_name" content="Swapnil Katuwal Portfolio">
+  <meta property="og:locale" content="en_US">
 
-  <title>Swapnil Katuwal | Cybersecurity Portfolio</title>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Swapnil Katuwal | Junior SOC Analyst & Cybersecurity Professional">
+  <meta name="twitter:description" content="Junior SOC Analyst specializing in threat detection, SIEM operations, incident response, and Python security tools.">
+
+  <!-- Structured Data - Person (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Swapnil Katuwal",
+    "url": "https://swapnilkatuwal.vercel.app/",
+    "jobTitle": "Junior SOC Analyst",
+    "description": "Junior SOC Analyst specializing in threat detection, SIEM operations, incident response, and Python-based security tooling.",
+    "knowsAbout": ["Cybersecurity", "SOC Operations", "SIEM", "Wazuh", "Threat Intelligence", "Incident Response", "Python", "Network Security", "Linux"],
+    "sameAs": [
+      "https://github.com/swapnilbrrr",
+      "https://www.linkedin.com/in/swapnil-katuwal-bb7529309"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data - Website (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Swapnil Katuwal Portfolio",
+    "url": "https://swapnilkatuwal.vercel.app/",
+    "description": "Portfolio of Swapnil Katuwal — Junior SOC Analyst and cybersecurity professional."
+  }
+  </script>
+
+  <!-- Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#0a0e17">
+  <meta name="color-scheme" content="dark">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar" id="navbar">
-    <div class="navbar-container">
-      <a href="#hero" class="nav-logo">SK</a>
-      <ul class="nav-menu">
-        <li><a href="#hero" class="nav-link">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#certifications" class="nav-link">Certs</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-      <div class="hamburger" id="hamburger" aria-label="Menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Hero Section with Cyber Theme Background -->
-  <section id="hero" class="hero">
-    <canvas id="hero-bg"></canvas>
+  <!-- Custom Cursor Glow -->
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar-container">
+        <a href="#hero" class="nav-logo" aria-label="Swapnil Katuwal - Home">
+          <span class="logo-bracket">[</span><span class="logo-text">SK</span><span class="logo-bracket">]</span>
+        </a>
+        <ul class="nav-menu" role="menubar">
+          <li role="none"><a href="#hero" class="nav-link" role="menuitem">Home</a></li>
+          <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+          <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+          <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+          <li role="none"><a href="#certifications" class="nav-link" role="menuitem">Certs</a></li>
+          <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero" aria-label="Introduction">
+    <canvas id="hero-bg" aria-hidden="true"></canvas>
+    <div class="hero-gradient-orb hero-orb-1" aria-hidden="true"></div>
+    <div class="hero-gradient-orb hero-orb-2" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
     <div class="hero-content">
-      <h1 data-text="Swapnil Katuwal" class="glitch">Swapnil Katuwal</h1>
-      <p>Cybersecurity Intern / SOC Analyst-in‑Training<span class="cursor"></span></p>
+      <div class="hero-badge">
+        <span class="badge-pulse" aria-hidden="true"></span>
+        Junior SOC Analyst
+      </div>
+      <h1 class="hero-name">
+        <span class="line reveal-text">Swapnil</span>
+        <span class="line accent reveal-text">Katuwal</span>
+      </h1>
+      <p class="hero-tagline" aria-live="polite">
+        <span class="typewriter-text"></span><span class="cursor" aria-hidden="true">_</span>
+      </p>
+
+      <!-- Terminal snippet for visual impact -->
+      <div class="hero-terminal" aria-hidden="true">
+        <div class="terminal-header">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+          <span class="terminal-title">swapnil@soc:~</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line"><span class="terminal-prompt">$</span> <span class="terminal-cmd" id="terminal-cmd"></span><span class="terminal-cursor" aria-hidden="true"></span></div>
+        </div>
+      </div>
+
       <div class="hero-cta">
-        <a href="#projects" class="cta-button">View Projects</a>
-        <a href="/resume/SwapnilKatuwal-CV.pdf" target="_blank" class="cta-button secondary">Download Resume</a>
+        <a href="#projects" class="btn btn-primary magnetic">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          View Projects
+        </a>
+        <a href="resume/Swapnil_Katuwal_CV.pdf" target="_blank" rel="noopener" class="btn btn-outline magnetic">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download CV
+        </a>
+      </div>
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="about fade-in">
-    <h2>About Me</h2>
-    <p>A proactive and passionate cybersecurity student with a drive for turning theoretical knowledge into practical, hands-on solutions. I enjoy building tools in Python, simulating enterprise security environments, and analyzing network traffic to understand attacker methodologies. I am eager to contribute my skills to a security team and grow as a SOC analyst.</p>
+  <section id="about" class="about section-padding" aria-label="About me">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">01 // About</span>
+        <h2>Who I Am</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-lead">A proactive <strong>Junior SOC Analyst</strong> with hands-on experience in <strong>threat detection</strong>, <strong>SIEM operations</strong>, and <strong>incident response</strong>.</p>
+          <p>I combine a strong foundation in cybersecurity theory with practical skills in building security tools, analyzing network traffic, and monitoring enterprise environments. My background includes Python-based security tooling, Wazuh SIEM deployment, and Linux system administration.</p>
+          <p>I'm passionate about defending organizations against cyber threats and continuously expanding my blue team capabilities.</p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Blue Team Defense</span>
+            </div>
+            <div class="highlight-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <span>Network Analysis</span>
+            </div>
+            <div class="highlight-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <span>SIEM Monitoring</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card glow-card">
+            <span class="stat-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </span>
+            <span class="stat-number" data-count="6">0</span>
+            <span class="stat-label">Security Projects</span>
+          </div>
+          <div class="stat-card glow-card">
+            <span class="stat-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            </span>
+            <span class="stat-number" data-count="4">0</span>
+            <span class="stat-label">Certifications</span>
+          </div>
+          <div class="stat-card glow-card">
+            <span class="stat-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <span class="stat-number" data-count="3">0</span>
+            <span class="stat-label">Focus Areas</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="projects fade-in">
-    <h2>Projects</h2>
-    <div class="project-filters">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="python">Python</button>
-      <button class="filter-btn" data-filter="javascript">JavaScript</button>
-      <button class="filter-btn" data-filter="soc">SOC</button>
-      <button class="filter-btn" data-filter="web">Web</button>
-    </div>
-    <div class="project-list">
-      <!-- Project 1 -->
-      <div class="project-item" data-category="python">
-        <div class="project-image-placeholder" style="background-color: #A52A2A;"></div>
-        <h3>Interactive Honeypot</h3>
-        <p>A low-interaction Python honeypot designed to capture and log malicious network traffic, providing insights into attacker methodologies.</p>
-        <div class="project-tech">
-          <span>Python</span>
-          <span>Socket Programming</span>
-          <span>Logging</span>
-        </div>
-        <a href="https://github.com/swapnilbrrr/honeypot-project" target="_blank">View on GitHub</a>
+  <section id="projects" class="projects section-padding" aria-label="Projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">02 // Projects</span>
+        <h2>My Work</h2>
+        <div class="section-line"></div>
       </div>
-      <!-- Project 2 -->
-      <div class="project-item" data-category="python">
-        <div class="project-image-placeholder" style="background-color: #4682B4;"></div>
-        <h3>Port Scanner / Detector</h3>
-        <p>A modular Python port scanning tool with banner grabbing, multi-threaded scanning, and timestamped logging for security analysis.</p>
-        <div class="project-tech">
-          <span>Python</span>
-          <span>Networking</span>
-          <span>Concurrency</span>
-        </div>
-        <a href="https://github.com/swapnilbrrr/portscan-detector" target="_blank">View on GitHub</a>
+      <div class="project-filters" role="tablist" aria-label="Filter projects">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="python" role="tab" aria-selected="false">Python</button>
+        <button class="filter-btn" data-filter="soc" role="tab" aria-selected="false">SOC</button>
       </div>
-      <!-- Project 3 -->
-      <div class="project-item" data-category="soc">
-        <div class="project-image-placeholder" style="background-color: #2E8B57;"></div>
-        <h3>SOC Simulation Lab (Planned)</h3>
-        <p>A virtualized lab environment for practicing incident response, threat hunting, and SIEM analysis in a controlled setting.</p>
-        <div class="project-tech">
-          <span>VirtualBox</span>
-          <span>SIEM</span>
-          <span>Wireshark</span>
-        </div>
-        <a href="#" target="_blank" class="disabled-link">Coming Soon</a>
-      </div>
-      <!-- Project 4 -->
-      <div class="project-item" data-category="python">
-        <div class="project-image-placeholder" style="background-color: #DAA520;"></div>
-        <h3>Packet Capture Analyzer</h3>
-        <p>A Python script that analyzes .pcap files to extract key network traffic insights and identify suspicious patterns.</p>
-        <div class="project-tech">
-          <span>Python</span>
-          <span>Scapy</span>
-          <span>Pandas</span>
-        </div>
-        <a href="https://github.com/swapnilbrrr/Packet-Capture-Analyzer" target="_blank">View on GitHub</a>
-      </div>
-      <!-- Project 5 -->
-      <div class="project-item" data-category="javascript web">
-        <div class="project-image-placeholder" style="background-color: #FF4500;"></div>
-        <h3>Password Strength Checker</h3>
-        <p>A client-side tool built with JavaScript to assess password strength in real-time based on multiple criteria like length and character types.</p>
-        <div class="project-tech">
-          <span>JavaScript</span>
-          <span>HTML</span>
-          <span>CSS</span>
-        </div>
-        <a href="#" target="_blank" class="disabled-link">Coming Soon</a>
-      </div>
-      <!-- Project 6 -->
-      <div class="project-item" data-category="web">
-        <div class="project-image-placeholder" style="background-color: #8A2BE2;"></div>
-        <h3>Threat Intel Dashboard (Planned)</h3>
-        <p>A web-based dashboard to aggregate and visualize real-time threat intelligence feeds from various open-source APIs.</p>
-        <div class="project-tech">
-          <span>JavaScript</span>
-          <span>API Integration</span>
-          <span>Data Viz</span>
-        </div>
-        <a href="#" target="_blank" class="disabled-link">Coming Soon</a>
+      <div class="project-grid" role="tabpanel">
+        <!-- Project 1 -->
+        <article class="project-card tilt-card" data-category="python">
+          <div class="card-glow" aria-hidden="true"></div>
+          <div class="project-card-header">
+            <div class="project-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/swapnilbrrr/honeypot-project" target="_blank" rel="noopener" title="View on GitHub" aria-label="View Honeypot project on GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Interactive Honeypot</h3>
+          <span class="project-status wip">In Progress</span>
+          <p>A low-interaction Python honeypot designed to capture and log malicious network traffic, providing insights into attacker methodologies and TTPs.</p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>Socket Programming</span>
+            <span>Logging</span>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card tilt-card" data-category="python">
+          <div class="card-glow" aria-hidden="true"></div>
+          <div class="project-card-header">
+            <div class="project-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/swapnilbrrr/portscan-detector" target="_blank" rel="noopener" title="View on GitHub" aria-label="View Port Scanner project on GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Port Scanner / Detector</h3>
+          <p>A modular Python port scanning tool with banner grabbing, multi-threaded scanning, and timestamped logging for security analysis.</p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>Networking</span>
+            <span>Concurrency</span>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card tilt-card" data-category="python">
+          <div class="card-glow" aria-hidden="true"></div>
+          <div class="project-card-header">
+            <div class="project-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/swapnilbrrr/Packet-Capture-Analyzer" target="_blank" rel="noopener" title="View on GitHub" aria-label="View Packet Analyzer project on GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Packet Capture Analyzer</h3>
+          <p>A Python script that analyzes .pcap files to extract key network traffic insights and identify suspicious patterns for threat analysis.</p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>Scapy</span>
+            <span>Pandas</span>
+          </div>
+        </article>
+
+        <!-- Project 4 - Planned -->
+        <article class="project-card tilt-card" data-category="soc">
+          <div class="card-glow" aria-hidden="true"></div>
+          <div class="project-card-header">
+            <div class="project-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+          </div>
+          <h3>SOC Simulation Lab</h3>
+          <span class="project-status planned">Planned</span>
+          <p>A virtualized lab environment for practicing incident response, threat hunting, and SIEM analysis in a controlled enterprise-like setting.</p>
+          <div class="project-tech">
+            <span>VirtualBox</span>
+            <span>Wazuh</span>
+            <span>Wireshark</span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="skills fade-in">
-    <h2>Skills</h2>
-    <div class="skills-container">
-      <div class="skill-category">
-        <h3>Security & Analysis</h3>
-        <div class="skill">
-          <p>Network Security</p>
-          <div class="skill-bar"><div class="skill-level" data-level="10"></div></div>
-        </div>
-        <div class="skill">
-          <p>SOC & SIEM</p>
-          <div class="skill-bar"><div class="skill-level" data-level="15"></div></div>
-        </div>
-        <div class="skill">
-          <p>Digital Forensics</p>
-          <div class="skill-bar"><div class="skill-level" data-level="30"></div></div>
-        </div>
+  <section id="skills" class="skills section-padding" aria-label="Technical skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">03 // Skills</span>
+        <h2>Tech Stack</h2>
+        <div class="section-line"></div>
       </div>
-      <div class="skill-category">
-        <h3>Programming & Tools</h3>
-        <div class="skill">
-          <p>Python</p>
-          <div class="skill-bar"><div class="skill-level" data-level="40"></div></div>
+      <div class="skills-grid">
+        <div class="skill-group glow-card">
+          <div class="skill-group-header">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <h3>Security & Analysis</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info"><span>Network Security</span><span class="skill-pct">65%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-level="65"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>SIEM / Wazuh</span><span class="skill-pct">55%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-level="55"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Threat Intelligence</span><span class="skill-pct">45%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-level="45"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Incident Response</span><span class="skill-pct">50%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-level="50"></div></div>
+            </div>
+          </div>
         </div>
-        <div class="skill">
-          <p>Bash</p>
-          <div class="skill-bar"><div class="skill-level" data-level="20"></div></div>
+        <div class="skill-group glow-card">
+          <div class="skill-group-header">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <h3>Programming & Tools</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info"><span>Python</span><span class="skill-pct">60%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-level="60"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Linux / Bash</span><span class="skill-pct">55%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-level="55"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Wireshark</span><span class="skill-pct">50%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-level="50"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Networking</span><span class="skill-pct">60%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-level="60"></div></div>
+            </div>
+          </div>
         </div>
-        <div class="skill">
-          <p>Wireshark</p>
-          <div class="skill-bar"><div class="skill-level" data-level="15"></div></div>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3>Cloud & Virtualization</h3>
-        <div class="skill">
-          <p>Docker</p>
-          <div class="skill-bar"><div class="skill-level" data-level="5"></div></div>
-        </div>
-        <div class="skill">
-          <p>AWS (EC2, S3)</p>
-          <div class="skill-bar"><div class="skill-level" data-level="5"></div></div>
-        </div>
-        <div class="skill">
-          <p>VirtualBox</p>
-          <div class="skill-bar"><div class="skill-level" data-level="30"></div></div>
+        <div class="skill-group glow-card">
+          <div class="skill-group-header">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            <h3>Infrastructure</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info"><span>VirtualBox / VMs</span><span class="skill-pct">60%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-level="60"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Docker</span><span class="skill-pct">30%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-level="30"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>AWS Basics</span><span class="skill-pct">25%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-level="25"></div></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Certifications Section -->
-  <section id="certifications" class="certifications fade-in">
-    <h2>Certifications</h2>
-    <ul>
-      <li><a href="#">Introduction to Cybersecurity</a></li>
-      <li><a href="#">Cisco Certified CyberOps Associate (Planned)</a></li>
-    </ul>
+  <section id="certifications" class="certifications section-padding" aria-label="Certifications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">04 // Certifications</span>
+        <h2>Credentials</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="cert-grid">
+        <div class="cert-card glow-card">
+          <div class="cert-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
+          <h3>Red Hat System Administration I</h3>
+          <span class="cert-id">RH124-10.0</span>
+          <span class="cert-issuer">Red Hat</span>
+        </div>
+        <div class="cert-card glow-card">
+          <div class="cert-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
+          <h3>Security Operations Center in Practice</h3>
+          <span class="cert-date">Issued Mar 2026</span>
+        </div>
+        <div class="cert-card glow-card">
+          <div class="cert-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
+          <h3>Getting Started with Threat Intelligence and Hunting</h3>
+          <span class="cert-issuer">IBM SkillsBuild</span>
+        </div>
+        <div class="cert-card glow-card">
+          <div class="cert-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
+          <h3>Introduction to Cybersecurity</h3>
+          <span class="cert-issuer">Cisco</span>
+        </div>
+        <div class="cert-card glow-card planned">
+          <div class="cert-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Cisco CyberOps Associate</h3>
+          <span class="cert-status">In Progress</span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="contact fade-in">
-    <h2>Contact Me</h2>
-    <p>I'm currently seeking new opportunities. Feel free to reach out!</p>
-    <form id="contact-form">
-      <div class="form-group">
-        <input type="text" id="name" name="name" required>
-        <label for="name">Name</label>
+  <section id="contact" class="contact section-padding" aria-label="Contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">05 // Contact</span>
+        <h2>Get In Touch</h2>
+        <div class="section-line"></div>
       </div>
-      <div class="form-group">
-        <input type="email" id="email" name="email" required>
-        <label for="email">Email</label>
+      <p class="contact-intro">I'm always open to discussing new opportunities, security challenges, or collaboration. Drop me a message below.</p>
+      <form id="contact-form" aria-label="Contact form">
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder=" " required autocomplete="name">
+            <label for="name">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder=" " required autocomplete="email">
+            <label for="email">Your Email</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+          <label for="message">Your Message</label>
+        </div>
+        <button type="submit" class="btn btn-primary magnetic">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send Message
+        </button>
+      </form>
+      <div class="social-links">
+        <a href="https://github.com/swapnilbrrr" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub profile">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="social-icon"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/swapnil-katuwal-bb7529309" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn profile">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="social-icon"><path d="M15.5 0h-15C.22 0 0 .22 0 .5v15c0 .28.22.5.5.5h15c.28 0 .5-.22.5-.5v-15C16 .22 15.78 0 15.5 0zM4.5 14h-3V6h3v8zM3 4.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm11 9.5h-3V9.75c0-1.12-.4-1.88-1.4-1.88-1 0-1.6.67-1.6 1.88V14h-3V6h2.8v1.4h.04c.42-.8 1.44-1.64 2.96-1.64 3.16 0 3.74 2.08 3.74 4.78V14z"/></svg>
+        </a>
       </div>
-      <div class="form-group">
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <label for="message">Message</label>
-      </div>
-      <button type="submit" class="cta-button">Send Message</button>
-    </form>
-    <div class="social-links">
-      <a href="https://github.com/swapnilbrrr" target="_blank" title="GitHub">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="social-icon"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/swapnil-katuwal-bb7529309" target="_blank" title="LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="social-icon"><path d="M15.5 0h-15C.22 0 0 .22 0 .5v15c0 .28.22.5.5.5h15c.28 0 .5-.22.5-.5v-15C16 .22 15.78 0 15.5 0zM4.5 14h-3V6h3v8zM3 4.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm11 9.5h-3V9.75c0-1.12-.4-1.88-1.4-1.88-1 0-1.6.67-1.6 1.88V14h-3V6h2.8v1.4h.04c.42-.8 1.44-1.64 2.96-1.64 3.16 0 3.74 2.08 3.74 4.78V14z"></path></svg>
-      </a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Swapnil Katuwal. All Rights Reserved.</p>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <p class="footer-logo">[SK]</p>
+        <p>&copy; 2026 Swapnil Katuwal. Built from scratch.</p>
+      </div>
+    </div>
   </footer>
 
   <!-- Scroll to Top Button -->
-  <button id="scroll-top-btn" title="Go to top">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-      <path d="M12 4l-8 8h6v8h4v-8h6l-8-8z"/>
-    </svg>
+  <button id="scroll-top-btn" title="Back to top" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
-  <div id="toast-container"></div>
+  <div id="toast-container" aria-live="assertive" aria-atomic="true"></div>
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="script.js" defer></script>
