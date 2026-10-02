@@ -1,5 +1,13 @@
 export type ProjectStatus = "active" | "archived" | "in-progress";
 
+// A real excerpt from the project's own repository, used as a visual anchor.
+export interface ProjectPreview {
+  file: string;
+  lang: string;
+  code: string;
+  caption: string;
+}
+
 export interface Project {
   id: string;
   slug: string;
@@ -19,6 +27,7 @@ export interface Project {
   securityConcepts?: string[];
   currentState?: string;
   tags?: string[];
+  preview?: ProjectPreview;
 }
 
 export interface ExperienceEntry {

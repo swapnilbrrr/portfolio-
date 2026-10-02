@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { ImageResponse } from "next/og";
+import { siteConfig } from "@/lib/site-config";
 
 export const alt = "Swapnil Katuwal, Security Engineer & Builder";
 export const size = { width: 1200, height: 630 };
@@ -133,7 +134,7 @@ export default function OpengraphImage(): ImageResponse {
         }}
       >
         <span style={{ fontSize: 22, fontFamily: "Mono", color: muted }}>
-          swapnilkatuwal.vercel.app
+          {siteConfig.url.replace(/^https?:\/\//, "")}
         </span>
         <span style={{ fontSize: 22, fontFamily: "Mono", color: muted }}>
           01 / 06

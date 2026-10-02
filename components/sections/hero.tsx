@@ -52,9 +52,9 @@ export function Hero() {
           >
             <span>{siteConfig.location}</span>
             <span aria-hidden="true">·</span>
-            <span>{siteConfig.timezone}</span>
-            <span aria-hidden="true">·</span>
             <span className="text-signal">{siteConfig.role}</span>
+            <span aria-hidden="true">·</span>
+            <span>{siteConfig.company}</span>
           </motion.p>
 
           <motion.h1
@@ -81,9 +81,9 @@ export function Hero() {
             data-reveal
             className="mt-7 max-w-xl text-[0.975rem] leading-relaxed text-muted-foreground"
           >
-            I work the detection side of security, alerts, logs and network
-            traffic, and I build: analysis tools, web platforms and small
-            systems that make how things break visible.
+            I work the detection side of security: alerts, logs, network
+            traffic. I also build analysis tools, web platforms and small
+            systems that show how things break.
           </motion.p>
 
           <motion.div

@@ -56,10 +56,10 @@ const personJsonLd = {
   "@type": "Person",
   name: siteConfig.name,
   url: siteConfig.url,
-  jobTitle: "SOC Analyst",
+  jobTitle: siteConfig.role,
   worksFor: {
     "@type": "Organization",
-    name: "Cryptogen Nepal",
+    name: siteConfig.company,
   },
   description: siteConfig.description,
   email: `mailto:${siteConfig.email}`,

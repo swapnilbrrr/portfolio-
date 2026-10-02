@@ -25,7 +25,7 @@ export const experience: ExperienceEntry[] = [
     location: "Kathmandu",
     period: "Feb 2025 - May 2025",
     bullets: [
-      "Executed multi-step test procedures with the precision log analysis and anomaly detection demand.",
+      "Executed multi-step test procedures with the precision that log analysis and anomaly detection demand.",
       "Identified, analyzed and prioritized defects through a structured workflow close to incident ticketing.",
       "Wrote reproducible technical documentation and coordinated fixes with developers.",
     ],

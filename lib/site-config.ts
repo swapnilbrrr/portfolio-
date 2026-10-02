@@ -12,7 +12,8 @@ export const siteConfig = {
   location: "Kathmandu, Nepal",
   timezone: "UTC+05:45",
   email: "swapnilkatuwal@gmail.com",
-  role: "SOC Analyst at Cryptogen Nepal",
+  role: "SOC Analyst",
+  company: "Cryptogen Nepal",
   resumeUrl: "/resume/Swapnil_Katuwal_CV.pdf",
   links: {
     github: "https://github.com/swapnilbrrr",

@@ -5,6 +5,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
 import { buttonVariants } from "@/components/ui/button";
 import { Container, Tag } from "@/components/primitives";
+import { ProjectPreviewPanel } from "@/components/project-preview";
 import { Reveal } from "@/components/motion/reveal";
 import { getProject, projects } from "@/lib/data/projects";
 import { siteConfig } from "@/lib/site-config";
@@ -126,7 +127,14 @@ export default async function ProjectPage({
         </header>
 
         <div className="grid gap-x-16 lg:grid-cols-[2fr_1fr]">
-          <div>
+          <div className="min-w-0">
+            {p.preview ? (
+              <Reveal>
+                <div className="mt-12 min-w-0">
+                  <ProjectPreviewPanel preview={p.preview} className="max-w-2xl" />
+                </div>
+              </Reveal>
+            ) : null}
             {p.context ? (
               <Reveal>
                 <CaseSection id="context" title="Why this exists">

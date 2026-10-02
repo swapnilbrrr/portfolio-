@@ -69,7 +69,9 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={0.06}>
               <h2 className="label-mono mb-3">Currently</h2>
-              <p className="text-sm leading-relaxed">{siteConfig.role}</p>
+              <p className="text-sm leading-relaxed">
+                {siteConfig.role} at {siteConfig.company}
+              </p>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {education.degree}
               </p>

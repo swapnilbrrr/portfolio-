@@ -41,6 +41,22 @@ export const projects: Project[] = [
     currentState:
       "Actively developed; a companion variant (Code-Room-ADO) re-implements the data layer with ADO.NET and SQL Server LocalDB to compare approaches.",
     tags: ["full-stack", "web platform"],
+    preview: {
+      file: "CodeRoom.Web/Models/Enrollment.cs",
+      lang: "csharp",
+      code: `public class Enrollment
+{
+    public int Id { get; set; }
+    public int UserId { get; set; }
+    public int CourseId { get; set; }
+    public DateTime EnrolledAt { get; set; } = DateTime.UtcNow;
+
+    public User User { get; set; } = null!;
+    public Course Course { get; set; } = null!;
+}`,
+      caption:
+        "Enrollment entity, the join between a student and a course. Verbatim from the repository.",
+    },
   },
   {
     id: "phishscan",
@@ -77,6 +93,19 @@ export const projects: Project[] = [
     currentState:
       "Functional analyzer, iterated locally with real phishing samples.",
     tags: ["email security", "soc tooling"],
+    preview: {
+      file: "public/app.js",
+      lang: "javascript",
+      code: `// SPF verdict scoring (trimmed)
+if (auth.spf === 'pass')
+  { authPct += 34; }
+else if (auth.spf === 'fail')
+  { if (!isTrusted) score += 15; }
+else if (auth.spf === 'softfail')
+  { if (!isTrusted) score += 8; }`,
+      caption:
+        "Authentication verdicts feed a weighted score; trusted senders are discounted. Verbatim from the repository.",
+    },
   },
   {
     id: "sentinel-kql",
@@ -108,6 +137,17 @@ export const projects: Project[] = [
     ],
     currentState: "Ongoing, expanding one detection area at a time.",
     tags: ["detection engineering", "study"],
+    preview: {
+      file: "KQL-CheatSheet.md",
+      lang: "kusto",
+      code: `SigninLogs
+| where TimeGenerated > ago(1h)
+| where ResultType == "50126" // invalid username/password
+| summarize FailedLogons = count() by IPAddress, UserPrincipalName
+| where FailedLogons >= 5`,
+      caption:
+        "Brute-force threshold rule: five failed logons from one identity inside an hour. Verbatim from the repository.",
+    },
   },
   {
     id: "portscan-detector",

@@ -22,7 +22,9 @@ SOC Analyst at Cryptogen Nepal · Kathmandu, Nepal
 ---
 
 A typography-led, dark-editorial portfolio for security engineering work.
-Fully static (SSG), zero third-party requests, no analytics, no trackers.
+Fully static (SSG), no third-party requests on initial page load, no
+analytics, no trackers. The contact form calls EmailJS only when you press
+send.
 
 ## Stack
 
@@ -33,7 +35,7 @@ Fully static (SSG), zero third-party requests, no analytics, no trackers.
 | Styling    | **Tailwind CSS 4** (`@theme` tokens, OKLCH)         | CSS-first design system                |
 | Components | **shadcn/ui on Base UI**                            | Command palette, dialogs, inputs       |
 | Motion     | **Motion 12** (`motion/react`)                      | Staggered reveals, reduced-motion safe |
-| Fonts      | **Geist Sans / Geist Mono** via `next/font`         | Self-hosted, zero external requests    |
+| Fonts      | **Geist Sans / Geist Mono** via `next/font`         | Self-hosted, no font CDN needed        |
 | Content    | Typed TS data + **MDX** posts (`next-mdx-remote`)   | Content lives next to the type system  |
 | Email      | **EmailJS** (client-side, public IDs only)          | Contact form with game captcha         |
 | QA         | Playwright scripts (local) + **GitHub Actions** CI  | Lint, typecheck, content checks, build |

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
+import { ProjectPreviewPanel } from "@/components/project-preview";
 import { Section, SectionHeader, Tag } from "@/components/primitives";
 import { featuredProjects } from "@/lib/data/projects";
 
@@ -24,7 +25,7 @@ export function SelectedWork() {
                 <span className="label-mono text-signal/80 tabular-nums">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <div>
+                <div className="min-w-0">
                   <h3 className="text-xl font-medium tracking-tight sm:text-2xl">
                     <span className="bg-gradient-to-r from-signal to-signal bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 group-hover:bg-[length:100%_1px]">
                       {project.title}
@@ -42,6 +43,12 @@ export function SelectedWork() {
                       {project.year}
                     </span>
                   </div>
+                  {project.preview ? (
+                    <ProjectPreviewPanel
+                      preview={project.preview}
+                      className="mt-5 max-w-2xl"
+                    />
+                  ) : null}
                 </div>
                 <div className="hidden items-center gap-4 sm:flex">
                   <span className="label-mono tabular-nums">

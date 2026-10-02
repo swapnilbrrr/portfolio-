@@ -27,6 +27,7 @@ function PatternGame({ onVerified }: { onVerified: (ok: boolean) => void }) {
   const [phase, setPhase] = useState<Phase>("idle");
   const [lit, setLit] = useState<number | null>(null);
   const [miss, setMiss] = useState<number | null>(null);
+  const [justMissed, setJustMissed] = useState(false);
   const seqRef = useRef<number[]>([]);
   const posRef = useRef(0);
   const timersRef = useRef<ReturnType<typeof setTimeout>[]>([]);
@@ -54,6 +55,7 @@ function PatternGame({ onVerified }: { onVerified: (ok: boolean) => void }) {
     );
     posRef.current = 0;
     setLit(null);
+    setJustMissed(false);
     setPhase("showing");
     const step = reduce ? 900 : 620;
     const on = reduce ? 520 : 340;
@@ -76,6 +78,7 @@ function PatternGame({ onVerified }: { onVerified: (ok: boolean) => void }) {
       }
     } else {
       setMiss(pad);
+      setJustMissed(true);
       setPhase("idle");
       onVerified(false);
       later(900, () => {
@@ -92,7 +95,9 @@ function PatternGame({ onVerified }: { onVerified: (ok: boolean) => void }) {
         ? "Your turn. Repeat it."
         : phase === "won"
           ? "Pattern cracked."
-          : "Four pads, four flashes. Repeat them to unlock the form.";
+          : justMissed
+            ? "Missed one. A new sequence starts in a moment."
+            : "Four pads, four flashes. Repeat them to unlock the form.";
 
   return (
     <div className="rounded-md border border-hairline bg-surface/40 p-5">
@@ -104,7 +109,7 @@ function PatternGame({ onVerified }: { onVerified: (ok: boolean) => void }) {
             verified
           </span>
         ) : (
-          <span className="font-mono text-[11px] text-muted-foreground">
+          <span className="font-mono text-[11px] text-muted-foreground" role="status">
             {hint}
           </span>
         )}
