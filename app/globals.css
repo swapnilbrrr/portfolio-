@@ -1,0 +1,254 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-hairline: var(--hairline);
+  --color-signal: var(--signal);
+  --color-signal-soft: var(--signal-soft);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-geist-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+/*
+  Design tokens — "instrument panel editorial"
+  Dark (default): charcoal foundation, warm-white text, one steel-blue signal.
+  Light: warm paper, charcoal ink, same signal darkened for contrast.
+*/
+:root {
+  --radius: 0.375rem;
+
+  --background: oklch(0.985 0.006 85);
+  --foreground: oklch(0.24 0.012 260);
+  --surface: oklch(1 0 0);
+  --surface-raised: oklch(0.97 0.007 85);
+  --hairline: oklch(0.24 0.012 260 / 0.14);
+  --signal: oklch(0.48 0.13 248);
+  --signal-soft: oklch(0.48 0.13 248 / 0.12);
+
+  --card: var(--surface);
+  --card-foreground: var(--foreground);
+  --popover: var(--surface);
+  --popover-foreground: var(--foreground);
+  --primary: var(--foreground);
+  --primary-foreground: var(--background);
+  --secondary: var(--surface-raised);
+  --secondary-foreground: var(--foreground);
+  --muted: var(--surface-raised);
+  --muted-foreground: oklch(0.52 0.014 260);
+  --accent: var(--surface-raised);
+  --accent-foreground: var(--foreground);
+  --destructive: oklch(0.55 0.2 25);
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--signal);
+
+  --chart-1: var(--signal);
+  --chart-2: oklch(0.6 0.02 260);
+  --chart-3: oklch(0.7 0.02 260);
+  --chart-4: oklch(0.8 0.02 260);
+  --chart-5: oklch(0.9 0.02 260);
+
+  --sidebar: var(--surface);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+.dark {
+  --background: oklch(0.168 0.008 260);
+  --foreground: oklch(0.925 0.011 85);
+  --surface: oklch(0.205 0.009 260);
+  --surface-raised: oklch(0.24 0.009 260);
+  --hairline: oklch(0.925 0.011 85 / 0.12);
+  --signal: oklch(0.74 0.09 245);
+  --signal-soft: oklch(0.74 0.09 245 / 0.14);
+
+  --card: var(--surface);
+  --card-foreground: var(--foreground);
+  --popover: var(--surface-raised);
+  --popover-foreground: var(--foreground);
+  --primary: var(--foreground);
+  --primary-foreground: var(--background);
+  --secondary: var(--surface-raised);
+  --secondary-foreground: var(--foreground);
+  --muted: var(--surface-raised);
+  --muted-foreground: oklch(0.68 0.014 260);
+  --accent: var(--surface-raised);
+  --accent-foreground: var(--foreground);
+  --destructive: oklch(0.68 0.19 25);
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--signal);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    color-scheme: light;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: var(--signal);
+    color: var(--background);
+  }
+  :focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  /* Without JS, scroll-reveal wrappers must not hold content invisible */
+  html:not(.js) [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@layer components {
+  /* Micro-label: uppercase mono metadata used across the site */
+  .label-mono {
+    @apply font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground;
+  }
+
+  /* Hairline rule between sections */
+  .rule {
+    @apply border-b border-hairline;
+  }
+
+  /* Very fine grid, hero background */
+  .grid-field {
+    background-image:
+      linear-gradient(to right, var(--hairline) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--hairline) 1px, transparent 1px);
+    background-size: 96px 96px;
+    mask-image: radial-gradient(
+      ellipse 90% 80% at 50% 0%,
+      black 30%,
+      transparent 75%
+    );
+  }
+
+  .prose-writing {
+    @apply text-[1.0625rem] leading-[1.75];
+  }
+  .prose-writing h2 {
+    @apply mt-12 mb-4 text-2xl font-semibold tracking-tight;
+  }
+  .prose-writing h3 {
+    @apply mt-9 mb-3 text-lg font-semibold tracking-tight;
+  }
+  .prose-writing p {
+    @apply my-4 text-foreground/85;
+  }
+  .prose-writing a {
+    @apply text-signal underline decoration-signal/40 underline-offset-4 hover:decoration-signal;
+  }
+  .prose-writing ul {
+    @apply my-4 list-disc space-y-1.5 pl-6;
+  }
+  .prose-writing ol {
+    @apply my-4 list-decimal space-y-1.5 pl-6;
+  }
+  .prose-writing blockquote {
+    @apply my-6 border-l-2 border-signal/50 pl-5 text-muted-foreground italic;
+  }
+  .prose-writing code {
+    @apply rounded-sm bg-surface-raised px-1.5 py-0.5 font-mono text-[0.85em] text-signal;
+  }
+  .prose-writing pre {
+    @apply my-6 overflow-x-auto rounded-md border border-hairline bg-surface p-5 text-sm leading-relaxed;
+  }
+  .prose-writing pre code {
+    @apply bg-transparent p-0 text-foreground/90;
+  }
+  .prose-writing hr {
+    @apply my-10 border-hairline;
+  }
+
+  /* highlight.js (rehype-highlight) palette adapted to tokens */
+  .hljs-comment,
+  .hljs-quote {
+    @apply text-muted-foreground italic;
+  }
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-built_in {
+    @apply text-signal;
+  }
+  .hljs-string,
+  .hljs-attr,
+  .hljs-template-variable {
+    @apply text-foreground/90;
+  }
+  .hljs-number,
+  .hljs-literal {
+    @apply text-amber-600 dark:text-amber-400/90;
+  }
+  .hljs-title,
+  .hljs-section {
+    @apply font-semibold;
+  }
+  .hljs-variable,
+  .hljs-type,
+  .hljs-symbol {
+    @apply text-muted-foreground;
+  }
+}

@@ -1,0 +1,24 @@
+---
+title: "Reading a Windows Security Log like an analyst"
+description: "How event IDs, logon types and result codes turn raw Windows telemetry into an incident narrative."
+date: "2026-10-01"
+tags: ["windows", "logs", "soc"]
+draft: true
+---
+
+> **This article is a work in progress and is not published.** It exists to
+> exercise the writing pipeline (MDX, syntax highlighting, metadata) and will
+> be finished before it appears on the site.
+
+## What the log is actually saying
+
+Placeholder body. The finished piece will walk through real event IDs (4624,
+4625, 4648, 4672), logon type tables, and how to build a timeline from
+authentication noise.
+
+```sql
+// Example query shape that will appear in the finished article
+SecurityEvent
+| where EventID in (4624, 4625)
+| summarize Attempts = count() by Account, LogonType, bin(TimeGenerated, 1h)
+```
