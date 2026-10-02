@@ -1,127 +1,132 @@
 <div align="center">
 
-# Swapnil Katuwal | SOC Analyst Portfolio
+# Swapnil Katuwal — Portfolio
 
-<p>
-  <a href="https://github.com/swapnilbrrr/portfolio/stargazers"><img src="https://img.shields.io/github/stars/swapnilbrrr/portfolio?style=for-the-badge&color=3b82f6" alt="Stars" /></a>
-  <a href="https://github.com/swapnilbrrr/portfolio/network/members"><img src="https://img.shields.io/github/forks/swapnilbrrr/portfolio?style=for-the-badge&color=22d3ee" alt="Forks" /></a>
-  <a href="https://github.com/swapnilbrrr/portfolio/issues"><img src="https://img.shields.io/github/issues/swapnilbrrr/portfolio?style=for-the-badge&color=f59e0b" alt="Issues" /></a>
-  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/swapnilbrrr/portfolio?style=for-the-badge&color=10b981" alt="License" /></a>
-</p>
+**Security Engineer & Builder**
 
-<p>
-  <img src="https://img.shields.io/badge/Role-SOC%20Analyst-0a0e17?style=for-the-badge&labelColor=111827&color=3b82f6" alt="Role" />
-  <img src="https://img.shields.io/badge/Focus-Blue%20Team%20Operations-0a0e17?style=for-the-badge&labelColor=111827&color=0891b2" alt="Focus" />
-  <img src="https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JavaScript-0a0e17?style=for-the-badge&labelColor=111827&color=6366f1" alt="Stack" />
-  <img src="https://img.shields.io/badge/Status-Actively%20Maintained-0a0e17?style=for-the-badge&labelColor=111827&color=16a34a" alt="Status" />
-</p>
+SOC Analyst at Cryptogen Nepal · Kathmandu, Nepal
 
-Cyber-themed portfolio website built from scratch to showcase SOC capability, cybersecurity projects, certifications, and professional experience.
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=nextdotjs&logoColor=white)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-19-149eca?style=flat-square&logo=react&logoColor=white)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![CI](https://img.shields.io/badge/CI-passing-2ea44f?style=flat-square&logo=githubactions&logoColor=white)](../../actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/license-private-lightgrey?style=flat-square)](#license)
 
-### Live Website
-[swapnilkatuwal.vercel.app](https://swapnilkatuwal.vercel.app/)
+[Live site](https://swapnilkatuwal.vercel.app) · [Work](https://swapnilkatuwal.vercel.app/work) · [About](https://swapnilkatuwal.vercel.app/about) · [Writing](https://swapnilkatuwal.vercel.app/writing)
 
 </div>
 
----
-
-## Table of Contents
-- [Overview](#overview)
-- [Why This Portfolio](#why-this-portfolio)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [SEO and Performance](#seo-and-performance)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Customization](#customization)
-- [Roadmap](#roadmap)
-- [License](#license)
+![Portfolio hero, dark editorial theme](public/images/readme/hero-dark.png)
 
 ---
 
-## Overview
-This project is a modern one-page cybersecurity portfolio focused on clarity, technical branding, and recruiter-friendly storytelling.
+A typography-led, dark-editorial portfolio for security engineering work.
+Fully static (SSG), no third-party requests on initial page load, no
+analytics, no trackers. The contact form calls EmailJS only when you press
+send.
 
-It combines visual depth (network canvas, terminal styling, glass UI) with practical content sections (experience, projects, skills, certifications, contact) and production-grade metadata.
+## Stack
 
-## Why This Portfolio
-- Built with vanilla web technologies to demonstrate strong frontend fundamentals.
-- Designed to match SOC and blue-team identity.
-- Structured for fast scanning by recruiters and hiring managers.
-- Includes both technical project work and real professional experience.
+| Layer      | Choice                                              | Why                                    |
+| ---------- | --------------------------------------------------- | -------------------------------------- |
+| Framework  | **Next.js 16** (App Router, React 19)               | Static prerender of every public route |
+| Language   | **TypeScript** strict                               | Typed content model                    |
+| Styling    | **Tailwind CSS 4** (`@theme` tokens, OKLCH)         | CSS-first design system                |
+| Components | **shadcn/ui on Base UI**                            | Command palette, dialogs, inputs       |
+| Motion     | **Motion 12** (`motion/react`)                      | Staggered reveals, reduced-motion safe |
+| Fonts      | **Geist Sans / Geist Mono** via `next/font`         | Self-hosted, no font CDN needed        |
+| Content    | Typed TS data + **MDX** posts (`next-mdx-remote`)   | Content lives next to the type system  |
+| Email      | **EmailJS** (client-side, public IDs only)          | Contact form with game captcha         |
+| QA         | Playwright scripts (local) + **GitHub Actions** CI  | Lint, typecheck, content checks, build |
 
-## Features
+## What's inside
 
-### Experience-Driven Content
-- Dedicated Experience section including current role at Cryptogen Nepal.
-- Project cards linked to real cybersecurity work and GitHub repositories.
-- Skills grouped by domain (Security, Tools, Infrastructure).
-- Certifications section with current and in-progress credentials.
+- **Home** — hero, "Now" band, selected work, technical focus, experience, about, writing teaser, contact
+- **Work** — editorial case studies per project (`/work/[slug]`) with source links
+- **Writing** — MDX notes; drafts are dev-only and never appear in production HTML or the sitemap
+- **About** — narrative, experience & education track record, certifications
+- **Contact** — email form gated by a four-pad memory-pattern game (human check) plus a honeypot, sending through EmailJS
+- **Command palette** — `Ctrl K` navigation
+- **Theme toggle** — dark by default, persisted, hydration-safe
+- **SEO** — JSON-LD (`Person` with `jobTitle: SOC Analyst`, `worksFor: Cryptogen Nepal`), OG image generated at build, sitemap, robots, canonicals
 
-### Visual and Interaction System
-- Interactive hero canvas with animated network nodes.
-- Terminal-inspired hero components and command-style section language.
-- Filterable projects with smooth transitions.
-- Scroll-triggered reveal animations and animated skill bars.
+![Contact section with form and memory-pattern human check](public/images/readme/contact.png)
 
-### UX and Accessibility
-- Responsive layout from mobile to desktop.
-- Active navigation highlighting and hide-on-scroll navbar.
-- Keyboard-friendly project tab filtering.
-- Contact form feedback states (success/error toasts).
+## Quick start
 
-## Tech Stack
-- HTML5
-- CSS3
-- Vanilla JavaScript (ES6+)
-- EmailJS (contact form delivery)
-
-## SEO and Performance
-Implemented SEO baseline includes:
-- Canonical URL, Open Graph, Twitter card tags.
-- Structured data (`Person`, `WebSite`) with role and organization.
-- `robots.txt` and `sitemap.xml` for crawl and indexing.
-- Lightweight architecture with no framework overhead.
-
-## Project Structure
-```text
-portfolio/
-|- index.html
-|- styles.css
-|- script.js
-|- robots.txt
-|- sitemap.xml
-|- images/
-|- resume/
-`- README.md
-```
-
-## Getting Started
-1. Clone the repository.
 ```bash
-git clone https://github.com/swapnilbrrr/portfolio.git
+git clone https://github.com/swapnilbrrr/portfolio-.git
+cd portfolio-
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-2. Open the project directory.
+## Commands
+
+| Command             | What it does                                  |
+| ------------------- | --------------------------------------------- |
+| `npm run dev`       | Dev server (draft posts preview here)         |
+| `npm run build`     | Production build, all routes static           |
+| `npm run start`     | Serve the production build                    |
+| `npm run lint`      | ESLint (next/core-web-vitals)                 |
+| `npm run typecheck` | `tsc --noEmit`                                |
+| `npm test`          | Content checks: role wording, links, no em dashes, draft gating |
+
+## Project structure
+
+```
+app/                  # routes (all static)
+  work/[slug]/        # project case studies
+  writing/[slug]/     # MDX posts (draft-gated)
+components/
+  sections/           # page sections (hero, work, contact form...)
+  ui/                 # shadcn/Base UI primitives
+content/writing/      # MDX posts
+lib/
+  site-config.ts      # single source of truth for URLs and identity
+  data/               # projects, experience, skills (typed)
+scripts/
+  content-check.mjs   # CI content assertions
+.github/workflows/    # CI: lint + typecheck + content checks + build
+```
+
+## Content model
+
+All visible copy is data-driven: edit `lib/data/projects.ts`,
+`lib/data/experience.ts` or add an MDX file under `content/writing/`.
+Frontmatter `draft: true` keeps a post out of production builds, the sitemap
+and every listing.
+
+## Domain configuration
+
+The deployed URL is a single switch:
+
 ```bash
-cd portfolio
+NEXT_PUBLIC_SITE_URL=https://swapnilkatuwal.com.np
 ```
 
-3. Run locally.
-- Open `index.html` directly, or
-- Use VS Code Live Server for faster iteration.
+Defaults to `https://swapnilkatuwal.vercel.app`. Metadata, canonicals,
+sitemap, JSON-LD and the OG image all derive from it, so moving to a custom
+domain is a one-variable change.
 
-## Customization
-- Update profile content in `index.html`.
-- Tune theme variables and layout in `styles.css`.
-- Adjust interactions and animation logic in `script.js`.
-- Replace CV in `resume/` and keep path aligned with hero button.
+## Deployment
 
-## Roadmap
-- Add dedicated case-study pages for major projects.
-- Add Lighthouse report badge and performance snapshots.
-- Add analytics for traffic and engagement measurement.
-- Expand technical writeups/blog section for long-tail SEO growth.
+Static output — deploys anywhere (`npm run build && npm run start`).
+The live site runs on Vercel.
+
+## CI
+
+Every push and PR runs `.github/workflows/ci.yml` on Node 22:
+install → lint → typecheck → content checks → production build.
 
 ## License
-Distributed under the MIT License.
+
+Private. All rights reserved.
+
+<div align="center">
+
+Built by [Swapnil Katuwal](https://github.com/swapnilbrrr) ·
+[LinkedIn](https://www.linkedin.com/in/swapnil-katuwal-bb7529309)
+
+</div>
